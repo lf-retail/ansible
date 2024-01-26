@@ -1,82 +1,52 @@
---- defaults
-jboss_controller: 10.15.24.33:16990
-github_token: "{{ lookup('env', 'TOKEN_GITHUB') }}"
-#war_file_url: "https://maven.pkg.github.com/Rakbank-DEH-Onboarding/SMEDigitalBank/com/rakbank/infosys/lib/smedigitalbank/1111/smedigitalbank-1111.war"
-war_file_url: "URL_NOT_SET"
-war_file_name: "{{ war_file_url | basename }}"
-jboss_home: "/apps/JBOSSEAP7.2_DIGITAL_BANK/EAP-7.2.0"
-jboss_deployments_dir: "{{ jboss_home }}/standalone/deployments"
-...
+TASK [retaildbdeployment : Source Oracle Environment] **************************
+task path: /ansible/GITHUB_RUNNER/actions-runner10/_work/RetailOnboarding-DB/RetailOnboarding-DB/roles/retaildbdeployment/tasks/main.yml:22
+<10.15.12.50> ESTABLISH SSH CONNECTION FOR USER: itdevtra
+<10.15.12.50> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="itdevtra"' -o ConnectTimeout=10 -o ControlPath=/home/itdevtra/.ansible/cp/cdfbe6e4d7 10.15.12.50 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /tmp `"&& mkdir /tmp/ansible-tmp-1706273288.406617-918022-123466127178559 && echo ansible-tmp-1706273288.406617-918022-123466127178559="` echo /tmp/ansible-tmp-1706273288.406617-918022-123466127178559 `" ) && sleep 0'"'"''
+<10.15.12.50> (0, b'ansible-tmp-1706273288.406617-918022-123466127178559=/tmp/ansible-tmp-1706273288.406617-918022-123466127178559\n', b'')
+Using module file /usr/lib/python3.6/site-packages/ansible/modules/commands/command.py
+<10.15.12.50> PUT /home/itdevtra/.ansible/tmp/ansible-local-917161b4iv8jzf/tmpl4s5la2a TO /tmp/ansible-tmp-1706273288.406617-918022-123466127178559/AnsiballZ_command.py
+<10.15.12.50> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="itdevtra"' -o ConnectTimeout=10 -o ControlPath=/home/itdevtra/.ansible/cp/cdfbe6e4d7 '[10.15.12.50]'
+<10.15.12.50> (0, b'sftp> put /home/itdevtra/.ansible/tmp/ansible-local-917161b4iv8jzf/tmpl4s5la2a /tmp/ansible-tmp-1706273288.406617-918022-123466127178559/AnsiballZ_command.py\n', b'')
+<10.15.12.50> ESTABLISH SSH CONNECTION FOR USER: itdevtra
+<10.15.12.50> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="itdevtra"' -o ConnectTimeout=10 -o ControlPath=/home/itdevtra/.ansible/cp/cdfbe6e4d7 10.15.12.50 '/bin/sh -c '"'"'chmod u+x /tmp/ansible-tmp-1706273288.406617-918022-123466127178559/ /tmp/ansible-tmp-1706273288.406617-918022-123466127178559/AnsiballZ_command.py && sleep 0'"'"''
+<10.15.12.50> (0, b'', b'')
+<10.15.12.50> ESTABLISH SSH CONNECTION FOR USER: itdevtra
+<10.15.12.50> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="itdevtra"' -o ConnectTimeout=10 -o ControlPath=/home/itdevtra/.ansible/cp/cdfbe6e4d7 -tt 10.15.12.50 '/bin/sh -c '"'"'/usr/bin/python /tmp/ansible-tmp-1706273288.406617-918022-123466127178559/AnsiballZ_command.py && sleep 0'"'"''
+<10.15.12.50> (1, b'\r\n{"invocation": {"module_args": {"warn": false, "chdir": null, "creates": null, "executable": null, "argv": null, "_uses_shell": false, "strip_empty_ends": true, "_raw_params": ". /oracle19c/app/oracle/product/19.3.0/db_home/bin/oraenv", "stdin": null, "stdin_add_newline": true, "removes": null}}, "exception": "  File \\"/tmp/ansible_command_payload_0ozhkeh7/ansible_command_payload.zip/ansible/module_utils/basic.py\\", line 2652, in run_command\\n    cmd = subprocess.Popen(args, **kwargs)\\n  File \\"/opt/freeware/lib64/python3.5/subprocess.py\\", line 947, in __init__\\n    restore_signals, start_new_session)\\n  File \\"/opt/freeware/lib64/python3.5/subprocess.py\\", line 1551, in _execute_child\\n    raise child_exception_type(errno_num, err_msg)\\n", "failed": true, "msg": "[Errno 13] The file access permissions do not allow the specified action.", "cmd": ". /oracle19c/app/oracle/product/19.3.0/db_home/bin/oraenv", "rc": 13}\r\n', b'Shared connection to 10.15.12.50 closed.\r\n')
+<10.15.12.50> Failed to connect to the host via ssh: Shared connection to 10.15.12.50 closed.
+<10.15.12.50> ESTABLISH SSH CONNECTION FOR USER: itdevtra
+<10.15.12.50> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o Port=22 -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="itdevtra"' -o ConnectTimeout=10 -o ControlPath=/home/itdevtra/.ansible/cp/cdfbe6e4d7 10.15.12.50 '/bin/sh -c '"'"'rm -f -r /tmp/ansible-tmp-1706273288.406617-918022-123466127178559/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.15.12.50> (0, b'', b'')
+The full traceback is:
+  File "/tmp/ansible_command_payload_0ozhkeh7/ansible_command_payload.zip/ansible/module_utils/basic.py", line 2652, in run_command
+    cmd = subprocess.Popen(args, **kwargs)
+  File "/opt/freeware/lib64/python3.5/subprocess.py", line 947, in __init__
+    restore_signals, start_new_session)
+  File "/opt/freeware/lib64/python3.5/subprocess.py", line 1551, in _execute_child
+    raise child_exception_type(errno_num, err_msg)
+fatal: [10.15.12.50]: FAILED! => {
+    "changed": false,
+    "cmd": ". /oracle19c/app/oracle/product/19.3.0/db_home/bin/oraenv",
+    "invocation": {
+        "module_args": {
+            "_raw_params": ". /oracle19c/app/oracle/product/19.3.0/db_home/bin/oraenv",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true,
+            "warn": false
+        }
+    },
+    "msg": "[Errno 13] The file access permissions do not allow the specified action.",
+    "rc": 13
+}
 
-playbook
-  - hosts: '{{ target }}'
-    become: yes
-    #become_method: sudo
-    become_user: itdevtra
-    gather_facts: yes
-    roles:
-      - smedeployment
+PLAY RECAP *********************************************************************
+10.15.12.50                : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 
-
-tasks
-
----
-#- name: Stop JBoss
-  #become: true 
-  #become_user: itdevtra
-  #command: "/apps/JBOSSEAP7.2_DIGITAL_BANK/EAP-7.2.0/bin/jboss-cli.sh --connect controller={{ jboss_controller }} command=:shutdown"
-  #ignore_errors: yes
-
-- name: Download WAR
-  delegate_to: localhost
-  run_once: true
-  get_url:
-    url: "{{ war_file_url }}"
-    dest: "/tmp/{{ war_file_name }}"
-    headers:
-      Authorization: "token {{ github_token }}"
-
-#- name: Copy WAR to Target Server
-  #copy:
-    #src: "/tmp/{{ war_file_name }}"
-    #dest: "{{ jboss_deployments_dir }}/{{ war_file_name }}"
-
-#- name: Start JBoss 
-  #become: true 
-  #become_user: itdevtra
-  #command: /apps/JBOSSEAP7.2_DIGITAL_BANK/EAP-7.2.0/bin/STARTJBOSSEAP7.2_DIGITAL_BANK.sh
-
-- name: Clean up WAR from Runner
-  delegate_to: localhost
-  file:
-    path: "/tmp/{{ war_file_name }}"
-    state: absent
-  run_once: true
-
-
-workflow
-name: Deploy WAR to JBoss
-
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'WAR Version to Deploy'
-        required: true
-        default: '1111'
-
-jobs:
-  deploy:
-    runs-on:
-      group: rakbank-self-hosted-runner
-      labels: dehitdevtra1
-    steps: 
-      - name: Checkout Ansible playbook
-        uses: actions/checkout@v2
-
-      - name: Run playbook
-        env:
-          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
-        run: |
-          cd ${{ github.workspace }}
-          ansible-playbook -b --extra-vars "target=target_jb war_file_url=https://maven.pkg.github.com/Rakbank-DEH-Onboarding/SMEDigitalBank/com/rakbank/infosys/lib/smedigitalbank/${{ github.event.inputs.version }}/smedigitalbank-${{ github.event.inputs.version }}.war" ./playbook/smedeployment.yml
+Error: Process completed with exit code 2.
