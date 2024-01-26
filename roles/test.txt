@@ -8,7 +8,14 @@ jboss_home: "/apps/JBOSSEAP7.2_DIGITAL_BANK/EAP-7.2.0"
 jboss_deployments_dir: "{{ jboss_home }}/standalone/deployments"
 ...
 
-
+playbook
+  - hosts: '{{ target }}'
+    become: yes
+    #become_method: sudo
+    become_user: itdevtra
+    gather_facts: yes
+    roles:
+      - smedeployment
 
 
 tasks
